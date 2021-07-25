@@ -36,3 +36,27 @@ var twoSum = function(nums, target) {
 };
 
 console.log(twoSum([3,2,4],6));
+
+
+/*
+Runtime: 164 ms, faster than 14.19% of JavaScript online submissions for Two Sum.
+Memory Usage: 39.8 MB, less than 24.85% of JavaScript online submissions for Two Sum.
+*/
+
+var twoSum = function(nums, target) {
+    let map = new Map;
+    for (var i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+        if (map.has(complement)) {
+            return [map.get(complement), i]
+        }
+        map.set(nums[i], i);
+    }
+};
+
+/*
+
+Runtime: 72 ms, faster than 96.13% of JavaScript online submissions for Two Sum.
+Memory Usage: 41 MB, less than 13.00% of JavaScript online submissions for Two Sum.
+
+*/
